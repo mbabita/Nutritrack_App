@@ -1,0 +1,13 @@
+com\nutritrack\backend\dto\LoginRequest.class
+com\nutritrack\backend\service\UserService.class
+com\nutritrack\backend\dto\LoginResponse.class
+com\nutritrack\backend\model\User.class
+com\nutritrack\backend\repository\UserRepository.class
+com\nutritrack\backend\model\User$Gender.class
+com\nutritrack\backend\config\SecurityConfig.class
+com\nutritrack\backend\util\JwtUtil.class
+com\nutritrack\backend\BackendApplication.class
+com\nutritrack\backend\config\JwtAuthenticationFilter.class
+com\nutritrack\backend\dto\RegisterRequest.class
+com\nutritrack\backend\controller\AuthController.class
+com\nutritrack\backend\util\EmailService.class
