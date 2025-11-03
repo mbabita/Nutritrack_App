@@ -1,0 +1,6 @@
+- [ ] Remove background gradients and images from .container
+- [ ] Set .container background to white and text to black
+- [ ] Update .hero section to white background and black text
+- [ ] Update .help, .steps, .testimonials, .pricing, .socialProof, .dietPlans to white background and black text
+- [ ] Ensure all text elements are black on white
+- [ ] Test the changes by running the app
