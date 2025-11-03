@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider } from './contexts/AppContext';
+import Sidebar from './components/Sidebar';
 import TrackingPage from './components/TrackingPage';
 import Dashboard from './components/Dashboard';
 import RecipesPage from './components/RecipesPage';
@@ -23,9 +24,10 @@ const App = () => {
     setIsLoggedIn(true);
   };
 
-  const MainApp = () => (
+const MainApp = () => (
     <AppProvider>
       <div style={styles.appContainer}>
+        <Sidebar activeSection={activeSection} setActiveSection={setActiveSection} />
         <main style={styles.mainContent}>
           {activeSection === 'Dashboard' && <Dashboard setActiveSection={setActiveSection} />}
           {activeSection === 'Tracking' && <TrackingPage setActiveSection={setActiveSection} />}
@@ -91,6 +93,8 @@ const styles = {
   mainContent: {
     flexGrow: 1,
     padding: '20px',
+    marginLeft: '280px', // Account for expanded sidebar width
+    transition: 'margin-left 0.3s ease',
   },
   placeholder: {
     textAlign: 'center',

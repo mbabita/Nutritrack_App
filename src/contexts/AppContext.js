@@ -67,7 +67,10 @@ export const AppProvider = ({ children }) => {
   });
 
   // Theme state
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
+
+  // Sidebar collapse state
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   // Load from localStorage on mount
   useEffect(() => {
@@ -159,6 +162,8 @@ export const AppProvider = ({ children }) => {
     updateNotifications,
     theme,
     setTheme,
+    sidebarCollapsed,
+    setSidebarCollapsed,
   };
 
   return (
