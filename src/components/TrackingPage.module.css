@@ -1,0 +1,217 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.backButton {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 12px 24px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 12be6, 234, 0.4);
+    font-weight: 600;
+}
+
+.backButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.pageTitle {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 36px;
+    font-weight: 800;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.pageSubtitle {
+    color: #7f8c8d;
+    margin-bottom: 40px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 400;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.goalsContainer {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    border: 2px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+}
+
+.goalsContainer h2 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.goalsContainer p {
+    color: white;
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 15px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.trackingGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.mealAndWaterContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+
+
+
+.chartsContainer {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 25px;
+    box-shadow: 0 6px 20px rgba(67, 233, 123, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.chartsContainer:hover {
+    transform: translateY(-3px);
+}
+
+.notesContainer {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 25px;
+    box-shadow: 0 6px 20px rgba(250, 112, 154, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.notesContainer:hover {
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .trackingGrid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .pageTitle {
+        font-size: 32px;
+    }
+
+    .pageSubtitle {
+        font-size: 16px;
+    }
+
+    .goalsContainer {
+        padding: 25px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .pageTitle {
+        font-size: 28px;
+    }
+
+    .pageSubtitle {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .goalsContainer {
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+
+    .goalsContainer h2 {
+        font-size: 20px;
+    }
+
+    .goalsContainer p {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .mealAndWaterContainer {
+        gap: 20px;
+    }
+
+    .exerciseContainer,
+    .moodContainer,
+    .chartsContainer,
+    .notesContainer {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .backButton {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .pageTitle {
+        font-size: 24px;
+    }
+
+    .goalsContainer {
+        padding: 15px;
+    }
+
+    .goalsContainer h2 {
+        font-size: 18px;
+    }
+
+    .goalsContainer p {
+        font-size: 13px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}

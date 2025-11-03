@@ -1,0 +1,123 @@
+// WaterTracker.js
+import React from 'react';
+
+const WaterTracker = ({ intake, onAdd, onReset }) => {
+    const totalTargetMl = 3000; // 3L target
+    const currentL = (intake / 1000).toFixed(1);
+    const progressPercentage = Math.min(100, (intake / totalTargetMl) * 100);
+
+    return (
+        <div style={styles.card}>
+            <h2 style={styles.sectionTitle}>Water Tracker <span role="img" aria-label="water-icon">💧</span></h2>
+            <p style={styles.sectionSubtitle}>Great start! Keep Sipping.</p>
+
+            <div style={styles.progressBarContainer}>
+                <div style={styles.progressBar}>
+                    <div style={{ ...styles.progressFill, width: `${progressPercentage}%` }}></div>
+                </div>
+                <div style={styles.progressText}>
+                    <span style={styles.currentL}>{currentL}L</span>
+                    <span style={styles.targetL}>of 3L</span>
+                </div>
+            </div>
+
+            <div style={styles.actions}>
+                <button
+                    style={styles.addButton}
+                    onClick={() => onAdd(250)} // Add 250ml per glass
+                >
+                    + Add Glass (250ml)
+                </button>
+                <button style={styles.resetButton} onClick={onReset}>Reset</button>
+            </div>
+        </div>
+    );
+};
+
+const styles = {
+    card: {
+        background: 'linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%)',
+        padding: '20px',
+        borderRadius: '12px',
+        boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+        textAlign: 'center',
+        border: '1px solid #bbdefb',
+    },
+    sectionTitle: {
+        color: '#387c53',
+        fontSize: '22px',
+        marginBottom: '5px',
+        fontWeight: 'bold',
+    },
+    sectionSubtitle: {
+        color: '#607D8B',
+        fontSize: '14px',
+        marginBottom: '30px',
+    },
+    progressBarContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        marginBottom: '30px',
+    },
+    progressBar: {
+        width: '100%',
+        maxWidth: '300px',
+        height: '20px',
+        borderRadius: '10px',
+        backgroundColor: '#e3f2fd',
+        border: '2px solid #bbdefb',
+        position: 'relative',
+        overflow: 'hidden',
+    },
+    progressFill: {
+        height: '100%',
+        background: 'linear-gradient(90deg, #4fc3f7 0%, #29b6f6 100%)',
+        transition: 'width 0.5s ease-out',
+        borderRadius: '8px',
+    },
+    progressText: {
+        marginTop: '10px',
+        color: '#0d47a1',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
+    currentL: {
+        fontSize: '32px',
+        fontWeight: 'bold',
+    },
+    targetL: {
+        fontSize: '16px',
+        fontWeight: '500',
+        color: '#607D8B',
+    },
+    actions: {
+        display: 'flex',
+        justifyContent: 'center',
+        gap: '15px',
+    },
+    addButton: {
+        padding: '12px 24px',
+        borderRadius: '25px',
+        border: 'none',
+        background: 'linear-gradient(135deg, #66bb6a 0%, #4caf50 100%)',
+        color: 'white',
+        cursor: 'pointer',
+        fontWeight: 'bold',
+        boxShadow: '0 4px 8px rgba(102, 187, 106, 0.3)',
+        transition: 'all 0.3s',
+    },
+    resetButton: {
+        padding: '12px 24px',
+        borderRadius: '25px',
+        border: '1px solid #b0bec5',
+        backgroundColor: 'white',
+        color: '#607d8b',
+        cursor: 'pointer',
+        fontWeight: 'bold',
+        transition: 'all 0.3s',
+    }
+};
+
+export default WaterTracker;

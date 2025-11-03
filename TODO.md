@@ -1,6 +1,11 @@
-- [ ] Remove background gradients and images from .container
-- [ ] Set .container background to white and text to black
-- [ ] Update .hero section to white background and black text
-- [ ] Update .help, .steps, .testimonials, .pricing, .socialProof, .dietPlans to white background and black text
+- [ ] Change .container background to white, remove gradients, set color to black
+- [ ] Update .hero section: Remove background image and gradients, set to white background, change text colors to black
+- [ ] Update .features section to white background and black text
+- [ ] Update .socialProof section to white background and black text
+- [ ] Update .pricing section to white background and black text
+- [ ] Update .testimonials section to white background and black text
+- [ ] Update other sections (.how-it-works, .faq, .blog-preview, .contact, etc.) to white background and black text
+- [ ] Adjust colors for buttons, icons, highlights to dark versions for visibility on white backgrounds
 - [ ] Ensure all text elements are black on white
-- [ ] Test the changes by running the app
+- [ ] Run npm start to test the changes
+- [ ] Mark all tasks as completed in TODO.md

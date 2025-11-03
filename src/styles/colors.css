@@ -1,0 +1,37 @@
+/* Modern Dark-Themed Color Palette for NutriTrack App */
+/* Dark Mode with Gradient Accents */
+:root {
+  --primary-blue: #3b82f6; /* Bright Blue for primary elements */
+  --primary-purple: #8b5cf6; /* Purple for primary elements */
+  --secondary-dark: #1a1a2e; /* Dark Navy for secondary elements */
+  --secondary-darker: #0f0f23; /* Very Dark for secondary elements */
+  --background-dark: #0f0f23; /* Very Dark background */
+  --background-gradient: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  --accent-blue: #3b82f6; /* Blue for accents */
+  --accent-purple: #8b5cf6; /* Purple for accents */
+  --text-white: #ffffff; /* White for text */
+  --text-light: #cbd5e1; /* Light gray for secondary text */
+  --text-accent: #3b82f6; /* Blue for accent text */
+  --shadow-dark: rgba(0, 0, 0, 0.3); /* Dark shadow */
+  --shadow-blue: rgba(59, 130, 246, 0.3); /* Blue-tinted shadow */
+  --border-radius-small: 8px;
+  --border-radius-medium: 12px;
+  --border-radius-large: 16px;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Universal Variables */
+:root {
+  --primary: var(--primary-blue);
+  --primary-light: var(--primary-purple);
+  --secondary: var(--secondary-dark);
+  --secondary-dark: var(--secondary-darker);
+  --background: var(--background-dark);
+  --accent: var(--accent-blue);
+  --accent-dark: var(--accent-purple);
+  --text: var(--text-white);
+  --text-secondary: var(--text-light);
+  --shadow: var(--shadow-dark);
+  --shadow-hover: var(--shadow-blue);
+}

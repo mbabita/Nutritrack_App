@@ -1,0 +1,138 @@
+.card {
+    flex: 1;
+    background: 'linear-gradient(135deg, #ffffff 0%, #fff3e0 100%)';
+    padding: '20px';
+    borderRadius: '12px';
+    boxShadow: '0 4px 8px rgba(0,0,0,0.1)';
+    minWidth: '300px';
+    border: '1px solid #ffe0b2';
+}
+
+.sectionTitle {
+    color: '#387c53';
+    fontSize: '22px';
+    marginBottom: '5px';
+    fontWeight: 'bold';
+}
+
+.sectionSubtitle {
+    color: '#607D8B';
+    fontSize: '14px';
+    marginBottom: '20px';
+}
+
+.taskList {
+    listStyle: 'none';
+    padding: 0;
+    margin: 0;
+}
+
+.taskItem {
+    display: 'flex';
+    alignItems: 'center';
+    padding: '12px 0';
+    borderBottom: '1px dashed #eee';
+    justifyContent: 'space-between';
+}
+
+.checkbox {
+    width: '24px';
+    height: '24px';
+    borderRadius: '50%';
+    border: '2px solid #B0BEC5';
+    backgroundColor: 'transparent';
+    marginRight: '15px';
+    display: 'flex';
+    justifyContent: 'center';
+    alignItems: 'center';
+    transition: 'all 0.3s';
+    boxShadow: 'none';
+}
+
+.checkboxCompleted {
+    border: '2px solid #4CAF50';
+    backgroundColor: '#66BB6A';
+}
+
+.taskText {
+    color: '#212121';
+    textDecoration: 'none';
+    fontWeight: '500';
+    flexGrow: 1;
+}
+
+.taskTextCompleted {
+    color: '#9E9E9E';
+    textDecoration: 'line-through';
+}
+
+.taskIcon {
+    fontSize: '18px';
+    marginLeft: '10px';
+}
+
+.reminderHeader {
+    marginTop: '30px';
+    fontSize: '20px';
+    color: '#FF9800';
+    display: 'flex';
+    alignItems: 'center';
+}
+
+.reminderSubtitle {
+    color: '#607D8B';
+    fontSize: '14px';
+    marginBottom: '15px';
+}
+
+.reminderList {
+    listStyle: 'none';
+    padding: 0;
+    margin: 0;
+}
+
+.reminderItem {
+    display: 'flex';
+    justifyContent: 'space-between';
+    alignItems: 'center';
+    padding: '10px 0';
+    borderBottom: '1px solid #eee';
+}
+
+.reminderTime {
+    fontWeight: 'bold';
+    color: '#FF9800';
+}
+
+.reminderName {
+    color: '#424242';
+    flexGrow: 1;
+}
+
+.reminderIcon {
+    fontSize: '16px';
+    marginLeft: '10px';
+}
+
+/* New styles for dynamic tasks */
+.addTaskButton {
+    marginTop: '15px';
+    padding: '10px 20px';
+    backgroundColor: '#387c53';
+    color: 'white';
+    border: 'none';
+    borderRadius: '6px';
+    cursor: 'pointer';
+    fontWeight: 'bold';
+}
+
+.notificationButton {
+    marginTop: '15px';
+    padding: '10px 20px';
+    backgroundColor: '#FF9800';
+    color: 'white';
+    border: 'none';
+    borderRadius: '6px';
+    cursor: 'pointer';
+    fontWeight: 'bold';
+}
