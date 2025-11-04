@@ -70,13 +70,13 @@ const UserProfileDropdown = ({ onLogout }) => {
 
             <div style={styles.divider}></div>
 
-            <button style={styles.dropdownItem} onClick={() => console.log('View Profile')}>
+            <button style={styles.dropdownItem} onClick={() => {}}>
               👤 View Profile
             </button>
-            <button style={styles.dropdownItem} onClick={() => console.log('Settings')}>
+            <button style={styles.dropdownItem} onClick={() => {}}>
               ⚙️ Settings
             </button>
-            <button style={styles.dropdownItem} onClick={() => console.log('Help & Support')}>
+            <button style={styles.dropdownItem} onClick={() => {}}>
               ❓ Help & Support
             </button>
 

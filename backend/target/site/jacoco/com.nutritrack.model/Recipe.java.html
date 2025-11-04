@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Recipe.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">nutri-track-backend</a> &gt; <a href="index.source.html" class="el_package">com.nutritrack.model</a> &gt; <span class="el_source">Recipe.java</span></div><h1>Recipe.java</h1><pre class="source lang-java linenums">package com.nutritrack.model;
+
+import jakarta.persistence.*;
+import java.util.List;
+
+@Entity
+@Table(name = &quot;recipes&quot;)
+public class Recipe {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String name;
+
+    private String description;
+    private String instructions;
+    private Integer prepTime; // in minutes
+    private Integer cookTime; // in minutes
+    private Integer servings;
+
+    @OneToMany(mappedBy = &quot;recipe&quot;, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List&lt;NutritionInfo&gt; nutritionInfos;
+
+    // Constructors
+<span class="nc" id="L27">    public Recipe() {}</span>
+
+<span class="nc" id="L29">    public Recipe(String name, String description, String instructions, Integer prepTime, Integer cookTime, Integer servings) {</span>
+<span class="nc" id="L30">        this.name = name;</span>
+<span class="nc" id="L31">        this.description = description;</span>
+<span class="nc" id="L32">        this.instructions = instructions;</span>
+<span class="nc" id="L33">        this.prepTime = prepTime;</span>
+<span class="nc" id="L34">        this.cookTime = cookTime;</span>
+<span class="nc" id="L35">        this.servings = servings;</span>
+<span class="nc" id="L36">    }</span>
+
+    // Getters and Setters
+<span class="nc" id="L39">    public Long getId() { return id; }</span>
+<span class="nc" id="L40">    public void setId(Long id) { this.id = id; }</span>
+
+<span class="nc" id="L42">    public String getName() { return name; }</span>
+<span class="nc" id="L43">    public void setName(String name) { this.name = name; }</span>
+
+<span class="nc" id="L45">    public String getDescription() { return description; }</span>
+<span class="nc" id="L46">    public void setDescription(String description) { this.description = description; }</span>
+
+<span class="nc" id="L48">    public String getInstructions() { return instructions; }</span>
+<span class="nc" id="L49">    public void setInstructions(String instructions) { this.instructions = instructions; }</span>
+
+<span class="nc" id="L51">    public Integer getPrepTime() { return prepTime; }</span>
+<span class="nc" id="L52">    public void setPrepTime(Integer prepTime) { this.prepTime = prepTime; }</span>
+
+<span class="nc" id="L54">    public Integer getCookTime() { return cookTime; }</span>
+<span class="nc" id="L55">    public void setCookTime(Integer cookTime) { this.cookTime = cookTime; }</span>
+
+<span class="nc" id="L57">    public Integer getServings() { return servings; }</span>
+<span class="nc" id="L58">    public void setServings(Integer servings) { this.servings = servings; }</span>
+
+<span class="nc" id="L60">    public List&lt;NutritionInfo&gt; getNutritionInfos() { return nutritionInfos; }</span>
+<span class="nc" id="L61">    public void setNutritionInfos(List&lt;NutritionInfo&gt; nutritionInfos) { this.nutritionInfos = nutritionInfos; }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
