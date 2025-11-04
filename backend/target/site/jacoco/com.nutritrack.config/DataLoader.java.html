@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DataLoader.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">nutri-track-backend</a> &gt; <a href="index.source.html" class="el_package">com.nutritrack.config</a> &gt; <span class="el_source">DataLoader.java</span></div><h1>DataLoader.java</h1><pre class="source lang-java linenums">package com.nutritrack.config;
+
+import com.nutritrack.model.*;
+import com.nutritrack.repository.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
+
+@Component
+<span class="nc" id="L12">public class DataLoader implements CommandLineRunner {</span>
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private DiseaseRepository diseaseRepository;
+
+    @Autowired
+    private RecipeRepository recipeRepository;
+
+    @Autowired
+    private NutritionInfoRepository nutritionInfoRepository;
+
+    @Autowired
+    private MealPlanRepository mealPlanRepository;
+
+    @Autowired
+    private DailyTrackingRepository dailyTrackingRepository;
+
+    @Override
+    public void run(String... args) throws Exception {
+        // Load sample users
+<span class="nc" id="L35">        User user1 = new User(&quot;John Doe&quot;, &quot;john@example.com&quot;, 30, &quot;Male&quot;, 75.0, 175.0, LocalDate.of(1993, 5, 15));</span>
+<span class="nc" id="L36">        User user2 = new User(&quot;Jane Smith&quot;, &quot;jane@example.com&quot;, 25, &quot;Female&quot;, 60.0, 165.0, LocalDate.of(1998, 8, 20));</span>
+<span class="nc" id="L37">        userRepository.save(user1);</span>
+<span class="nc" id="L38">        userRepository.save(user2);</span>
+
+        // Load sample diseases
+<span class="nc" id="L41">        Disease diabetes = new Disease(&quot;Diabetes&quot;, &quot;A metabolic disorder characterized by high blood sugar levels.&quot;);</span>
+<span class="nc" id="L42">        Disease hypertension = new Disease(&quot;Hypertension&quot;, &quot;High blood pressure that can lead to serious health issues.&quot;);</span>
+<span class="nc" id="L43">        diseaseRepository.save(diabetes);</span>
+<span class="nc" id="L44">        diseaseRepository.save(hypertension);</span>
+
+        // Load sample recipes
+<span class="nc" id="L47">        Recipe salad = new Recipe(&quot;Greek Salad&quot;, &quot;A healthy Mediterranean salad&quot;, &quot;Mix all ingredients together.&quot;, 10, 0, 4);</span>
+<span class="nc" id="L48">        Recipe smoothie = new Recipe(&quot;Berry Smoothie&quot;, &quot;A refreshing fruit smoothie&quot;, &quot;Blend all ingredients until smooth.&quot;, 5, 0, 2);</span>
+<span class="nc" id="L49">        recipeRepository.save(salad);</span>
+<span class="nc" id="L50">        recipeRepository.save(smoothie);</span>
+
+        // Load sample nutrition info
+<span class="nc" id="L53">        NutritionInfo saladNutrition = new NutritionInfo(200.0, 10.0, 15.0, 12.0, 5.0, 8.0, salad);</span>
+<span class="nc" id="L54">        NutritionInfo smoothieNutrition = new NutritionInfo(150.0, 5.0, 30.0, 2.0, 8.0, 20.0, smoothie);</span>
+<span class="nc" id="L55">        nutritionInfoRepository.save(saladNutrition);</span>
+<span class="nc" id="L56">        nutritionInfoRepository.save(smoothieNutrition);</span>
+
+        // Load sample meal plans
+<span class="nc" id="L59">        MealPlan plan1 = new MealPlan(&quot;Weight Loss Plan&quot;, &quot;A plan focused on healthy eating for weight loss&quot;, LocalDate.now(), LocalDate.now().plusDays(30), user1);</span>
+<span class="nc" id="L60">        MealPlan plan2 = new MealPlan(&quot;Muscle Gain Plan&quot;, &quot;A plan for building muscle mass&quot;, LocalDate.now(), LocalDate.now().plusDays(30), user2);</span>
+<span class="nc" id="L61">        mealPlanRepository.save(plan1);</span>
+<span class="nc" id="L62">        mealPlanRepository.save(plan2);</span>
+
+        // Load sample daily trackings
+<span class="nc" id="L65">        DailyTracking tracking1 = new DailyTracking(LocalDate.now(), 2.0, 30.0, &quot;Good&quot;, 74.5, user1, plan1);</span>
+<span class="nc" id="L66">        DailyTracking tracking2 = new DailyTracking(LocalDate.now(), 1.5, 45.0, &quot;Excellent&quot;, 60.2, user2, plan2);</span>
+<span class="nc" id="L67">        dailyTrackingRepository.save(tracking1);</span>
+<span class="nc" id="L68">        dailyTrackingRepository.save(tracking2);</span>
+<span class="nc" id="L69">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

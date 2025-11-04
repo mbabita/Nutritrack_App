@@ -1,0 +1,12 @@
+C:\Users\Lenovo\IdeaProjects\nutritrack_final\Nutritrack_App\spring-boot-backend\src\main\java\com\nutritrack\backend\config\JwtAuthenticationFilter.java
+C:\Users\Lenovo\IdeaProjects\nutritrack_final\Nutritrack_App\spring-boot-backend\src\main\java\com\nutritrack\backend\util\JwtUtil.java
+C:\Users\Lenovo\IdeaProjects\nutritrack_final\Nutritrack_App\spring-boot-backend\src\main\java\com\nutritrack\backend\util\EmailService.java
+C:\Users\Lenovo\IdeaProjects\nutritrack_final\Nutritrack_App\spring-boot-backend\src\main\java\com\nutritrack\backend\dto\RegisterRequest.java
+C:\Users\Lenovo\IdeaProjects\nutritrack_final\Nutritrack_App\spring-boot-backend\src\main\java\com\nutritrack\backend\controller\AuthController.java
+C:\Users\Lenovo\IdeaProjects\nutritrack_final\Nutritrack_App\spring-boot-backend\src\main\java\com\nutritrack\backend\dto\LoginRequest.java
+C:\Users\Lenovo\IdeaProjects\nutritrack_final\Nutritrack_App\spring-boot-backend\src\main\java\com\nutritrack\backend\model\User.java
+C:\Users\Lenovo\IdeaProjects\nutritrack_final\Nutritrack_App\spring-boot-backend\src\main\java\com\nutritrack\backend\config\SecurityConfig.java
+C:\Users\Lenovo\IdeaProjects\nutritrack_final\Nutritrack_App\spring-boot-backend\src\main\java\com\nutritrack\backend\service\UserService.java
+C:\Users\Lenovo\IdeaProjects\nutritrack_final\Nutritrack_App\spring-boot-backend\src\main\java\com\nutritrack\backend\dto\LoginResponse.java
+C:\Users\Lenovo\IdeaProjects\nutritrack_final\Nutritrack_App\spring-boot-backend\src\main\java\com\nutritrack\backend\BackendApplication.java
+C:\Users\Lenovo\IdeaProjects\nutritrack_final\Nutritrack_App\spring-boot-backend\src\main\java\com\nutritrack\backend\repository\UserRepository.java
