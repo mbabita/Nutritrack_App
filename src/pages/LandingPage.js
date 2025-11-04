@@ -135,14 +135,71 @@ const LandingPage = () => {
             <FaRocket style={{ marginRight: '8px' }} />
             NutriTrack
           </motion.h2>
-          <motion.button
-            className="loginButton"
-            onClick={handleFreeTrial}
-            whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.3)" }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Login
-          </motion.button>
+          <div className="nav-links">
+            <motion.button
+              className="navButton"
+              onClick={handleGetStarted}
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              style={{ fontSize: '14px', padding: '6px 12px', marginRight: '8px' }}
+            >
+              Home
+            </motion.button>
+            <motion.button
+              className="navButton"
+              onClick={() => navigate('/about')}
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              style={{ fontSize: '14px', padding: '6px 12px', marginRight: '8px' }}
+            >
+              About
+            </motion.button>
+            <motion.button
+              className="navButton"
+              onClick={() => navigate('/features')}
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              style={{ fontSize: '14px', padding: '6px 12px', marginRight: '8px' }}
+            >
+              Features
+            </motion.button>
+            <motion.button
+              className="navButton"
+              onClick={() => navigate('/plans')}
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              style={{ fontSize: '14px', padding: '6px 12px', marginRight: '8px' }}
+            >
+              Plans
+            </motion.button>
+            <motion.button
+              className="navButton"
+              onClick={() => navigate('/testimonials')}
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              style={{ fontSize: '14px', padding: '6px 12px', marginRight: '8px' }}
+            >
+              Testimonials
+            </motion.button>
+            <motion.button
+              className="navButton"
+              onClick={() => navigate('/contact')}
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              style={{ fontSize: '14px', padding: '6px 12px', marginRight: '8px' }}
+            >
+              Contact
+            </motion.button>
+            <motion.button
+              className="navButton"
+              onClick={() => navigate('/profile')}
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              style={{ fontSize: '14px', padding: '6px 12px' }}
+            >
+              Profile
+            </motion.button>
+          </div>
         </div>
       </motion.nav>
 
@@ -160,7 +217,7 @@ const LandingPage = () => {
             animate={{ scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Transform Your <span className="highlight">Health Journey</span>
+          Transform Your <span className="highlight">Health Journey</span>
           </motion.h1>
           <motion.p
             className="heroSubtitle"
@@ -265,7 +322,7 @@ const LandingPage = () => {
           className="sectionTitle"
           variants={itemVariants}
         >
-          Why Choose NutriTrack
+          Empowering Your Healthy Journey
         </motion.h2>
         <motion.div
           className="featuresGrid"
@@ -298,15 +355,7 @@ const LandingPage = () => {
             <h3>Community Support</h3>
             <p>Join thousands of users sharing recipes, tips, and celebrating successes together.</p>
           </motion.div>
-          <motion.div
-            className="featureItem"
-            variants={itemVariants}
-            whileHover={{ scale: 1.05, rotateY: 5 }}
-          >
-            <FaShieldAlt className="featureIcon" />
-            <h3>Privacy First</h3>
-            <p>Your health data is encrypted and secure. We never share your personal information.</p>
-          </motion.div>
+          
         </motion.div>
       </motion.section>
 
