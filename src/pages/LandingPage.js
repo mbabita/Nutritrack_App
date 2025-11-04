@@ -77,7 +77,7 @@ const LandingPage = () => {
   };
 
   const handlePlanPurchase = (planName, planPrice) => {
-    console.log('Navigating to payment page for', planName, planPrice);
+
     navigate('/payment', { state: { planName, planPrice } });
   };
 
