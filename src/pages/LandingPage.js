@@ -185,6 +185,7 @@ const LandingPage = () => {
               style={{ fontSize: '14px', padding: '6px 12px', marginRight: '8px' }}
             >
               Contact
+              
             </motion.button>
             <motion.button
               className="navButton"
@@ -193,7 +194,7 @@ const LandingPage = () => {
               whileTap={{ scale: 0.95 }}
               style={{ fontSize: '14px', padding: '6px 12px' }}
             >
-              Login
+              Profile
             </motion.button>
           </div>
         </div>
