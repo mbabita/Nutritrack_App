@@ -147,15 +147,6 @@ const LandingPage = () => {
             </motion.button>
             <motion.button
               className="navButton"
-              onClick={() => navigate('/about')}
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.3)" }}
-              whileTap={{ scale: 0.95 }}
-              style={{ fontSize: '14px', padding: '6px 12px', marginRight: '8px' }}
-            >
-              About
-            </motion.button>
-            <motion.button
-              className="navButton"
               onClick={() => navigate('/features')}
               whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.3)" }}
               whileTap={{ scale: 0.95 }}
@@ -197,7 +188,7 @@ const LandingPage = () => {
               whileTap={{ scale: 0.95 }}
               style={{ fontSize: '14px', padding: '6px 12px' }}
             >
-              Profile
+              Login
             </motion.button>
           </div>
         </div>

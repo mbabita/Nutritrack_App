@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { FaRocket } from 'react-icons/fa';
 import styles from './HomePage.module.css';
 
 const HomePage = () => {
@@ -45,6 +46,81 @@ const HomePage = () => {
       initial="hidden"
       animate="visible"
     >
+      {/* Navigation */}
+      <motion.nav
+        className={styles.navbar}
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+      >
+        <div className={styles.navContent}>
+          <motion.h2
+            className={styles.logo}
+            whileHover={{ scale: 1.05, rotate: [0, -2, 2, 0] }}
+            transition={{ duration: 0.3 }}
+          >
+            <FaRocket style={{ marginRight: '8px' }} />
+            NutriTrack
+          </motion.h2>
+          <div className={styles.navLinks}>
+            <motion.button
+              className={styles.navButton}
+              onClick={() => navigate('/')}
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              style={{ fontSize: '14px', padding: '6px 12px', marginRight: '8px' }}
+            >
+              Home
+            </motion.button>
+            <motion.button
+              className={styles.navButton}
+              onClick={() => navigate('/features')}
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              style={{ fontSize: '14px', padding: '6px 12px', marginRight: '8px' }}
+            >
+              Features
+            </motion.button>
+            <motion.button
+              className={styles.navButton}
+              onClick={() => navigate('/plans')}
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              style={{ fontSize: '14px', padding: '6px 12px', marginRight: '8px' }}
+            >
+              Plans
+            </motion.button>
+            <motion.button
+              className={styles.navButton}
+              onClick={() => navigate('/testimonials')}
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              style={{ fontSize: '14px', padding: '6px 12px', marginRight: '8px' }}
+            >
+              Testimonials
+            </motion.button>
+            <motion.button
+              className={styles.navButton}
+              onClick={() => navigate('/contact')}
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              style={{ fontSize: '14px', padding: '6px 12px', marginRight: '8px' }}
+            >
+              Contact
+            </motion.button>
+            <motion.button
+              className={styles.navButton}
+              onClick={() => navigate('/profile')}
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              style={{ fontSize: '14px', padding: '6px 12px' }}
+            >
+              Profile
+            </motion.button>
+          </div>
+        </div>
+      </motion.nav>
+
       {/* Hero Section */}
       <motion.section
         className={styles.hero}
