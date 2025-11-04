@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { FaPlay, FaStar, FaUsers, FaChartLine, FaAppleAlt, FaHeartbeat, FaRocket, FaShieldAlt, FaClock, FaCheckCircle } from 'react-icons/fa';
+import { FaPlay, FaStar, FaUsers, FaChartLine, FaAppleAlt, FaHeartbeat, FaRocket, FaShieldAlt, FaClock, FaCheckCircle, FaClipboardList, FaBell, FaUtensils, FaArrowUp, FaHeadset } from 'react-icons/fa';
 import PaymentModal from '../components/PaymentModal';
+import ContactSection from '../components/ContactSection';
 import './LandingPage.css';
 
 const LandingPage = () => {
@@ -11,6 +12,10 @@ const LandingPage = () => {
   const [showDemo, setShowDemo] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ days: 7, hours: 23, minutes: 59, seconds: 59 });
   const { scrollYProgress } = useScroll();
+  const featuresRef = useRef(null);
+  const pricingRef = useRef(null);
+  const testimonialsRef = useRef(null);
+  const contactRef = useRef(null);
 
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
@@ -147,7 +152,7 @@ const LandingPage = () => {
             </motion.button>
             <motion.button
               className="navButton"
-              onClick={() => navigate('/features')}
+              onClick={() => featuresRef.current?.scrollIntoView({ behavior: 'smooth' })}
               whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.3)" }}
               whileTap={{ scale: 0.95 }}
               style={{ fontSize: '14px', padding: '6px 12px', marginRight: '8px' }}
@@ -156,7 +161,7 @@ const LandingPage = () => {
             </motion.button>
             <motion.button
               className="navButton"
-              onClick={() => navigate('/plans')}
+              onClick={() => pricingRef.current?.scrollIntoView({ behavior: 'smooth' })}
               whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.3)" }}
               whileTap={{ scale: 0.95 }}
               style={{ fontSize: '14px', padding: '6px 12px', marginRight: '8px' }}
@@ -165,7 +170,7 @@ const LandingPage = () => {
             </motion.button>
             <motion.button
               className="navButton"
-              onClick={() => navigate('/testimonials')}
+              onClick={() => testimonialsRef.current?.scrollIntoView({ behavior: 'smooth' })}
               whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.3)" }}
               whileTap={{ scale: 0.95 }}
               style={{ fontSize: '14px', padding: '6px 12px', marginRight: '8px' }}
@@ -174,7 +179,7 @@ const LandingPage = () => {
             </motion.button>
             <motion.button
               className="navButton"
-              onClick={() => navigate('/contact')}
+              onClick={() => contactRef.current?.scrollIntoView({ behavior: 'smooth' })}
               whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.3)" }}
               whileTap={{ scale: 0.95 }}
               style={{ fontSize: '14px', padding: '6px 12px', marginRight: '8px' }}
@@ -307,13 +312,14 @@ const LandingPage = () => {
       {/* Key Value Propositions */}
       <motion.section
         className="features"
+        ref={featuresRef}
         variants={itemVariants}
       >
         <motion.h2
           className="sectionTitle"
           variants={itemVariants}
         >
-          Empowering Your Healthy Journey
+          Your Health Goals, Our Smart Features
         </motion.h2>
         <motion.div
           className="featuresGrid"
@@ -324,29 +330,55 @@ const LandingPage = () => {
             variants={itemVariants}
             whileHover={{ scale: 1.05, rotateY: 5 }}
           >
+            <FaClipboardList className="featureIcon" />
+            <h3>Smart Daily Tracking</h3>
+            <p>Track your meals, water intake, and workouts — all in one intuitive dashboard.</p>
+          </motion.div>
+          <motion.div
+            className="featureItem"
+            variants={itemVariants}
+            whileHover={{ scale: 1.05, rotateY: 5 }}
+          >
             <FaChartLine className="featureIcon" />
-            <h3>Real-time Analytics</h3>
-            <p>Monitor your nutrition intake, weight changes, and health metrics in real-time with beautiful charts.</p>
+            <h3>Nutrition Insights</h3>
+            <p>Visualize calorie intake, nutrients, and progress through interactive charts.</p>
           </motion.div>
           <motion.div
             className="featureItem"
             variants={itemVariants}
             whileHover={{ scale: 1.05, rotateY: 5 }}
           >
-            <FaAppleAlt className="featureIcon" />
-            <h3>Personalized Plans</h3>
-            <p>Personalized meal plans designed by nutritionists and powered by advanced algorithms.</p>
+            <FaBell className="featureIcon" />
+            <h3>Reminders & Notifications</h3>
+            <p>Stay on track with meal and hydration reminders.</p>
           </motion.div>
           <motion.div
             className="featureItem"
             variants={itemVariants}
             whileHover={{ scale: 1.05, rotateY: 5 }}
           >
-            <FaUsers className="featureIcon" />
-            <h3>Community Support</h3>
-            <p>Join thousands of users sharing recipes, tips, and celebrating successes together.</p>
+            <FaUtensils className="featureIcon" />
+            <h3>Recipe Recommendations</h3>
+            <p>Explore healthy recipes that match your goals and preferences.</p>
           </motion.div>
-          
+          <motion.div
+            className="featureItem"
+            variants={itemVariants}
+            whileHover={{ scale: 1.05, rotateY: 5 }}
+          >
+            <FaArrowUp className="featureIcon" />
+            <h3>Progress Analytics</h3>
+            <p>Monitor improvements with daily, weekly, and monthly insights.</p>
+          </motion.div>
+          <motion.div
+            className="featureItem"
+            variants={itemVariants}
+            whileHover={{ scale: 1.05, rotateY: 5 }}
+          >
+            <FaHeadset className="featureIcon" />
+            <h3>24/7 Support</h3>
+            <p>Get expert guidance anytime through our live chat feature.</p>
+          </motion.div>
         </motion.div>
       </motion.section>
 
@@ -458,6 +490,7 @@ const LandingPage = () => {
       {/* Pricing Plans */}
       <motion.section
         className="pricing"
+        ref={pricingRef}
         variants={itemVariants}
       >
         <motion.h2
@@ -547,6 +580,7 @@ const LandingPage = () => {
       {/* Success Stories */}
       <motion.section
         className="testimonials"
+        ref={testimonialsRef}
         variants={itemVariants}
       >
         <motion.h2
@@ -627,6 +661,14 @@ const LandingPage = () => {
         planName={paymentModal.planName}
         planPrice={paymentModal.planPrice}
       />
+
+      <motion.section
+        className="contact"
+        ref={contactRef}
+        variants={itemVariants}
+      >
+        <ContactSection />
+      </motion.section>
 
     </motion.div>
   );
